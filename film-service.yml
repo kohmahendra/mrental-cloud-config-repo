@@ -2,16 +2,6 @@ spring:
    application:
         name: film-service
    profiles: dev,test,uat,production
-     active: dev
-   config:
-      activate:
-          on-profile: test
-   name: film-service
-   jackson:     
-     serialization:
-       FAIL_ON_EMPTY_BEANS: false
-     default-property-inclusion: NON_NULL
-
 ---
 
 spring:
