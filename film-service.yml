@@ -1,13 +1,39 @@
 spring:
    application:
         name: film-service
-   profiles: dev,test,uat,production
+   profiles: dev,test,uat,prod
 ---
 
 spring:
    profiles : dev
    datasource:
     url: jdbc:oracle:thin:@localhost:1521/xe
-    username: dvdrental
-    password: dvdrental
+    username: ${DB_USER}
+    password: ${DB_PWD}
+    driver-class-name: oracle.jdbc.OracleDriver
+
+---
+spring:
+   profiles : test
+   datasource:
+    url: jdbc:oracle:thin:@test:1521/xe
+    username: ${DB_USER}
+    password: ${DB_PWD}
+    driver-class-name: oracle.jdbc.OracleDriver
+---
+spring:
+   profiles : uat
+   datasource:
+    url: jdbc:oracle:thin:@uat:1521/xe
+    username: ${DB_USER}
+    password: ${DB_PWD}
+    driver-class-name: oracle.jdbc.OracleDriver
+
+---
+spring:
+   profiles : prod
+   datasource:
+    url: jdbc:oracle:thin:@prod:1521/xe
+    username: ${DB_USER}
+    password: ${DB_PWD}
     driver-class-name: oracle.jdbc.OracleDriver
