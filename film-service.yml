@@ -2,7 +2,7 @@ spring:
    application:
         name: film-service
    profiles: dev,test,uat,production
-   active: dev
+     active: dev
    config:
       activate:
           on-profile: test
